@@ -1,1 +1,45 @@
 .project
+
+# Local agent/editor folders
+.agents/
+.claude/
+**/.agents/
+**/.claude/
+AGENTS.md
+CLAUDE.md
+**/AGENTS.md
+**/CLAUDE.md
+
+# Dependencies
+node_modules/
+**/node_modules/
+
+# Hardhat generated files
+artifacts/
+cache/
+types/
+coverage/
+snapshots/
+**/artifacts/
+**/cache/
+**/types/
+**/coverage/
+**/snapshots/
+
+# Build output
+dist/
+bundle/
+**/dist/
+**/bundle/
+
+# Environment files
+.env
+.env.*
+!.env.example
+**/.env
+**/.env.*
+!**/.env.example
+
+# Gas reports
+.gas-snapshot
+**/.gas-snapshot
