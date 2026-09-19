@@ -1,10 +1,16 @@
 {
   "name": "01-fundamentos-solidity",
   "version": "1.0.0",
-  "description": "",
+  "description": "Modulo de fundamentos de Solidity con Hardhat",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "compile": "hardhat compile",
+    "test": "hardhat test",
+    "deploy:all": "hardhat run scripts/deploy-all.ts --network hardhatMainnet",
+    "deploy:hello": "hardhat run scripts/deploy-hello-world.ts --network hardhatMainnet",
+    "deploy:variables": "hardhat run scripts/deploy-variables.ts --network hardhatMainnet",
+    "deploy:tipos": "hardhat run scripts/deploy-tipos-de-datos.ts --network hardhatMainnet",
+    "deploy:payable": "hardhat run scripts/deploy-payable.ts --network hardhatMainnet"
   },
   "keywords": [],
   "author": "",

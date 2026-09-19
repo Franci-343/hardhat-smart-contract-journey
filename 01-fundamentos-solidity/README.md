@@ -36,6 +36,8 @@ Desde esta carpeta:
 npm install
 ```
 
+No necesitas MetaMask ni una wallet real para esta etapa. Hardhat usa cuentas locales de prueba con ETH falso cuando ejecutas tests o despliegues en `hardhatMainnet`.
+
 ## Comandos principales
 
 Compilar:
@@ -44,10 +46,30 @@ Compilar:
 npx hardhat compile
 ```
 
+Tambien puedes usar:
+
+```bash
+npm run compile
+```
+
+Si ves `No contracts to compile`, no es un error. Significa que Hardhat ya compilo esos contratos antes y no detecto cambios nuevos.
+
 Ejecutar tests:
 
 ```bash
 npx hardhat test
+```
+
+Tambien puedes usar:
+
+```bash
+npm test
+```
+
+Resultado esperado:
+
+```text
+43 passing
 ```
 
 Desplegar todos los contratos en la red local simulada:
@@ -55,6 +77,16 @@ Desplegar todos los contratos en la red local simulada:
 ```bash
 npx hardhat run scripts/deploy-all.ts --network hardhatMainnet
 ```
+
+Tambien puedes usar:
+
+```bash
+npm run deploy:all
+```
+
+Resultado esperado: una lista de contratos con direcciones `0x...`.
+
+Esas direcciones son locales y temporales. Sirven para confirmar que el despliegue funciona, pero no estan en Sepolia ni en Ethereum mainnet.
 
 Desplegar ejemplos puntuales:
 
@@ -64,6 +96,28 @@ npx hardhat run scripts/deploy-variables.ts --network hardhatMainnet
 npx hardhat run scripts/deploy-tipos-de-datos.ts --network hardhatMainnet
 npx hardhat run scripts/deploy-payable.ts --network hardhatMainnet
 ```
+
+Tambien puedes usar:
+
+```bash
+npm run deploy:hello
+npm run deploy:variables
+npm run deploy:tipos
+npm run deploy:payable
+```
+
+## Flujo rapido de prueba
+
+Si quieres comprobar que todo el modulo funciona:
+
+```bash
+npm install
+npm run compile
+npm test
+npm run deploy:all
+```
+
+Si esos comandos pasan, el modulo esta funcionando correctamente en local.
 
 ## Orden sugerido
 
@@ -76,3 +130,17 @@ npx hardhat run scripts/deploy-payable.ts --network hardhatMainnet
 ## Nota de seguridad
 
 Nunca subas claves privadas, seed phrases ni archivos `.env` con credenciales. Para Sepolia usa una wallet de pruebas y ETH de testnet.
+
+## Cuando necesitas wallet
+
+No necesitas wallet para:
+
+- Compilar.
+- Ejecutar tests.
+- Desplegar en `hardhatMainnet`.
+
+Si necesitas wallet para:
+
+- Conectar MetaMask a una red local persistente.
+- Desplegar en Sepolia.
+- Interactuar con contratos desde Etherscan o una dapp.
