@@ -65,4 +65,10 @@ export default defineConfig({
       accounts: [configVariable("SEPOLIA_PRIVATE_KEY")],
     },
   },
+  // Verificacion en Etherscan (una sola API key sirve para todas las redes de Etherscan V2).
+  verify: {
+    etherscan: {
+      apiKey: configVariable("ETHERSCAN_API_KEY"),
+    },
+  },
 });

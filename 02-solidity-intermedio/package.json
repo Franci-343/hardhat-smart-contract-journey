@@ -7,7 +7,8 @@
     "compile": "hardhat compile",
     "test": "hardhat test",
     "deploy:local": "hardhat ignition deploy ignition/modules/01-Herencia.ts --network hardhatMainnet",
-    "deploy:sepolia": "hardhat ignition deploy ignition/modules/01-Herencia.ts --network sepolia"
+    "deploy:sepolia": "hardhat ignition deploy ignition/modules/01-Herencia.ts --network sepolia",
+    "typecheck": "hardhat build && tsc --noEmit"
   },
   "keywords": [],
   "author": "",

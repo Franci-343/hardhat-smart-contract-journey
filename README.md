@@ -15,7 +15,7 @@ Leyenda: `[x]` disponible, `[ ]` planificado.
 | --- | --- | --- |
 | `00-fundamentos-blockchain` | `[x]` | Conceptos base de blockchain y Ethereum |
 | `01-fundamentos-solidity` | `[x]` | Solidity basico + primer contacto con Hardhat, local y Sepolia |
-| `02-solidity-intermedio` | `[ ]` | Herencia, interfaces, librerias, modifiers y estandares |
+| `02-solidity-intermedio` | `[x]` | Herencia, interfaces, librerias, modifiers, ERC-20/721 y flujo real en Sepolia |
 | `03-solidity-avanzado` | `[ ]` | Seguridad, gas, assembly, proxies y patrones avanzados |
 | `04-hardhat-fundamentos` | `[ ]` | Hardhat 3 a fondo: configuracion, tareas, tests y redes |
 | `05-hardhat-intermedio` | `[ ]` | Fork de mainnet, Ignition, verificacion y depuracion |
@@ -49,12 +49,23 @@ Proyecto Hardhat 3 con Solidity 0.8.34, Mocha, Chai y Ethers. Ver el [README del
 
 Este modulo mezcla Solidity basico con una introduccion practica a Hardhat. Los modulos de Hardhat (04 a 06) profundizaran en lo que aqui solo se ve por encima.
 
+### 02 - Solidity intermedio
+
+Proyecto Hardhat 3 con Solidity 0.8.34, **viem** y `node:test`. Ver el [README del modulo](02-solidity-intermedio/README.md).
+
+- **16 contratos** en `contracts/`: herencia, constructores y `super`, contratos abstractos, interfaces, librerias, modifiers avanzados, `constant`/`immutable`, `storage`/`memory`/`calldata`, llamadas entre contratos, llamadas de bajo nivel, `try/catch`, control de acceso por roles, Ownable y pausas, ERC-20, ERC-721 y oraculos.
+- **Un test por contrato** en `test/` (108 tests).
+- **Despliegues** con scripts (`scripts/`) y modulos de Hardhat Ignition (`ignition/modules/`), uno por contrato.
+- **20 lecciones** en `docs/`, de `00-introduccion-solidity-intermedio` a `19-checklist-seguridad-intermedia`. Incluyen el flujo real con wallet de pruebas, Sepolia, Etherscan y verificacion de contratos.
+
+Ownable, roles, ERC-20 y ERC-721 se escriben a mano para entender su funcionamiento; en proyectos reales se usa OpenZeppelin.
+
 ## Ruta de aprendizaje
 
 ### Camino Solidity (00 a 03)
 
 - **Basico (01)**: sintaxis, tipos, estructuras de datos, eventos, errores y pagos con Ether. *Completo.*
-- **Intermedio (02)**: herencia, interfaces, clases abstractas, librerias, modifiers, `immutable`/`constant`, llamadas entre contratos, ERC-20 y ERC-721, OpenZeppelin, oraculos.
+- **Intermedio (02)**: herencia, interfaces, clases abstractas, librerias, modifiers, `immutable`/`constant`, llamadas entre contratos, `try/catch`, roles, ERC-20 y ERC-721, oraculos, Sepolia y Etherscan. *Completo.*
 - **Avanzado (03)**: vulnerabilidades comunes (reentrancy, control de acceso, overflow, front-running), optimizacion de gas, layout de storage, assembly/Yul, `delegatecall`, proxies y contratos actualizables, ERC-4626, `CREATE2`, auditoria.
 
 ### Camino Hardhat (04 a 06)
