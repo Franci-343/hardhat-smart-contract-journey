@@ -144,3 +144,47 @@ Si necesitas wallet para:
 - Conectar MetaMask a una red local persistente.
 - Desplegar en Sepolia.
 - Interactuar con contratos desde Etherscan o una dapp.
+
+## Wallets, Sepolia y Etherscan
+
+Cuando termines de probar en local, puedes pasar al flujo con wallet y testnet. Para eso sigue estas lecciones en orden:
+
+1. [Wallets y MetaMask](docs/07-wallets-y-metamask.md)
+2. [Red local vs testnet](docs/08-red-local-vs-testnet.md)
+3. [Desplegar en Sepolia](docs/09-desplegar-en-sepolia.md)
+4. [Ver contrato en Etherscan](docs/10-ver-contrato-en-etherscan.md)
+5. [Verificar contrato en Etherscan](docs/11-verificar-contrato-en-etherscan.md)
+
+Para Sepolia necesitas:
+
+- Una wallet de pruebas, por ejemplo MetaMask.
+- ETH de prueba de Sepolia.
+- Un RPC URL de Sepolia.
+- Una private key de una cuenta de pruebas.
+
+Para no configurar variables a mano, copia el archivo de ejemplo:
+
+```bash
+cp .env.example .env
+```
+
+En PowerShell tambien puedes usar:
+
+```powershell
+Copy-Item .env.example .env
+```
+
+Luego abre `.env` y reemplaza:
+
+```text
+SEPOLIA_RPC_URL=https://tu-rpc-de-sepolia
+SEPOLIA_PRIVATE_KEY=0xTU_PRIVATE_KEY_DE_PRUEBAS
+```
+
+Luego puedes desplegar un contrato en Sepolia:
+
+```bash
+npx hardhat run scripts/deploy-hello-world.ts --network sepolia
+```
+
+Usa una wallet separada para pruebas. No uses tu wallet principal ni pegues claves privadas en archivos del repositorio.
