@@ -1889,7 +1889,7 @@ Contract A
 Será estudiada en:
 
 ```text
-07-seguridad/
+03-solidity-avanzado/
 ```
 
 ---

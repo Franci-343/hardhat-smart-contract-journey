@@ -1318,7 +1318,7 @@ y patrones de acceso seguros.
 Lo estudiaremos en:
 
 ```text
-07-seguridad/
+02-solidity-intermedio/contracts/09-LlamadasEntreContratos.sol
 ```
 
 ---

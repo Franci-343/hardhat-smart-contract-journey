@@ -1961,7 +1961,7 @@ Las reglas del protocolo pueden evolucionar.
 Estudiaremos esto en:
 
 ```text
-07-seguridad/
+03-solidity-avanzado/
 ```
 
 ---

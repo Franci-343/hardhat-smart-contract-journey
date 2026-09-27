@@ -21,6 +21,12 @@
 .env.*
 !.env.example
 
+# Local assistant/editor folders
+/.agents
+/.claude
+/AGENTS.md
+/CLAUDE.md
+
 # Hardhat coverage reports
 /coverage
 

@@ -1582,10 +1582,10 @@ allowance
 transferFrom
 ```
 
-Más adelante construiremos tokens reales en:
+Más adelante construiremos un token real en:
 
 ```text
-08-erc20/
+02-solidity-intermedio/contracts/14-ERC20Basico.sol
 ```
 
 ---
@@ -1891,6 +1891,8 @@ ERC-1155
 ↓
 multiple token types
 ```
+
+Construiremos ERC-20 y ERC-721 en `02-solidity-intermedio/` y ERC-1155 en `03-solidity-avanzado/`.
 
 ---
 
@@ -2672,15 +2674,15 @@ más superficie de ataque
 
 # 102. OpenZeppelin
 
-Cuando creemos tokens no será recomendable implementar todos los estándares manualmente desde cero.
+En proyectos reales no será recomendable implementar todos los estándares manualmente desde cero.
 
-Utilizaremos:
+Se utiliza:
 
 ```text
 OpenZeppelin Contracts
 ```
 
-que ofrece implementaciones ampliamente utilizadas de estándares como:
+que ofrece implementaciones ampliamente utilizadas y auditadas de estándares como:
 
 ```text
 ERC20
@@ -2690,20 +2692,23 @@ ERC721
 ERC1155
 ```
 
-Lo estudiaremos en:
+En este curso construimos primero versiones simplificadas a mano, para entender qué hay dentro, en:
 
 ```text
-06-openzeppelin/
+02-solidity-intermedio/
+03-solidity-avanzado/
 ```
+
+y cada lección señala cuál es su equivalente real en OpenZeppelin.
 
 ---
 
 # 103. Luego construiremos ERC-20
 
-Más adelante tendremos:
+Más adelante lo construiremos en:
 
 ```text
-08-erc20/
+02-solidity-intermedio/contracts/14-ERC20Basico.sol
 ```
 
 donde veremos en profundidad:
@@ -2724,10 +2729,10 @@ donde veremos en profundidad:
 
 # 104. Luego construiremos ERC-721
 
-También tendremos:
+También lo construiremos en:
 
 ```text
-09-erc721/
+02-solidity-intermedio/contracts/15-ERC721Basico.sol
 ```
 
 donde aprenderemos:
@@ -2881,7 +2886,7 @@ Protocol
 Lo estudiaremos en:
 
 ```text
-11-oraculos/
+02-solidity-intermedio/contracts/16-OraculosInterfacesExternas.sol
 ```
 
 ---
@@ -4044,16 +4049,16 @@ y finalmente escribir contratos que implementen todas estas ideas.
 Más adelante volveremos específicamente a tokens en:
 
 ```text
-08-erc20/
+02-solidity-intermedio/
 ```
 
-y:
+y en estándares más avanzados en:
 
 ```text
-09-erc721/
+03-solidity-avanzado/
 ```
 
-donde construiremos implementaciones reales con Solidity, Hardhat y OpenZeppelin.
+donde construiremos implementaciones reales con Solidity y Hardhat.
 
 ---
 

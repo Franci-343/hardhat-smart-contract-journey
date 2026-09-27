@@ -883,7 +883,7 @@ Hardhat
 Cuando lleguemos a:
 
 ```text
-04-hardhat/
+04-hardhat-fundamentos/
 ```
 
 utilizaremos esta capacidad constantemente.
@@ -2449,7 +2449,7 @@ Solo modifican nuestro entorno local.
 El forking será extremadamente útil cuando lleguemos a:
 
 ```text
-10-defi/
+05-hardhat-intermedio/
 ```
 
 porque podremos probar sistemas que interactúan con contratos reales.

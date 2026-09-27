@@ -1,10 +1,14 @@
 {
   "name": "03-solidity-avanzado",
   "version": "1.0.0",
-  "description": "",
+  "description": "Modulo avanzado de Solidity: seguridad, gas, storage, assembly, proxies y estandares",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "compile": "hardhat compile",
+    "test": "hardhat test",
+    "typecheck": "hardhat build && tsc --noEmit",
+    "deploy:local": "hardhat ignition deploy ignition/modules/01-Reentrancy.ts --network hardhatMainnet",
+    "deploy:sepolia": "hardhat ignition deploy ignition/modules/01-Reentrancy.ts --network sepolia"
   },
   "keywords": [],
   "author": "",

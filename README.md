@@ -16,7 +16,7 @@ Leyenda: `[x]` disponible, `[ ]` planificado.
 | `00-fundamentos-blockchain` | `[x]` | Conceptos base de blockchain y Ethereum |
 | `01-fundamentos-solidity` | `[x]` | Solidity basico + primer contacto con Hardhat, local y Sepolia |
 | `02-solidity-intermedio` | `[x]` | Herencia, interfaces, librerias, modifiers, ERC-20/721 y flujo real en Sepolia |
-| `03-solidity-avanzado` | `[ ]` | Seguridad, gas, assembly, proxies y patrones avanzados |
+| `03-solidity-avanzado` | `[x]` | Reentrancy, control de acceso, gas, storage, assembly, proxies, `CREATE2`, EIP-712, ERC-4626/1155, flash loans |
 | `04-hardhat-fundamentos` | `[ ]` | Hardhat 3 a fondo: configuracion, tareas, tests y redes |
 | `05-hardhat-intermedio` | `[ ]` | Fork de mainnet, Ignition, verificacion y depuracion |
 | `06-hardhat-avanzado` | `[ ]` | Plugins propios, CI/CD, proyectos reales y flujo de produccion |
@@ -60,13 +60,24 @@ Proyecto Hardhat 3 con Solidity 0.8.34, **viem** y `node:test`. Ver el [README d
 
 Ownable, roles, ERC-20 y ERC-721 se escriben a mano para entender su funcionamiento; en proyectos reales se usa OpenZeppelin.
 
+### 03 - Solidity avanzado
+
+Proyecto Hardhat 3 con Solidity 0.8.34, **viem** y `node:test`. Ver el [README del modulo](03-solidity-avanzado/README.md).
+
+- **17 contratos** en `contracts/`: reentrancy (misma funcion y cruzada), vulnerabilidades de control de acceso (`tx.origin`), aritmetica y `unchecked`, front-running y commit-reveal, empaquetado de storage, patrones de gas, layout de storage, assembly/Yul, `delegatecall`, proxies minimos (EIP-1967), contratos actualizables (UUPS), clones minimos y `CREATE2` (EIP-1167), firmas EIP-712, ERC-4626, manipulacion de oraculos con flash loans, ERC-1155, y un checklist de auditoria con un contrato capstone para encontrar bugs.
+- **Un test por leccion** en `test/` (79 tests). Cada leccion con vulnerabilidad sigue el patron version vulnerable -> ataque -> version corregida, todo probado.
+- **Despliegues** con scripts (`scripts/`) y modulos de Hardhat Ignition (`ignition/modules/`), uno por leccion.
+- **18 lecciones** en `docs/`, de `00-introduccion-solidity-avanzado` a `17-checklist-auditoria`.
+
+Varios datos tecnicos (los slots de EIP-1967, el bytecode de un clon EIP-1167, el separador de dominio de EIP-712) se verifican comparando el resultado del contrato contra una implementacion independiente de viem (por ejemplo, `getCreate2Address`), no solo se describen.
+
 ## Ruta de aprendizaje
 
 ### Camino Solidity (00 a 03)
 
 - **Basico (01)**: sintaxis, tipos, estructuras de datos, eventos, errores y pagos con Ether. *Completo.*
 - **Intermedio (02)**: herencia, interfaces, clases abstractas, librerias, modifiers, `immutable`/`constant`, llamadas entre contratos, `try/catch`, roles, ERC-20 y ERC-721, oraculos, Sepolia y Etherscan. *Completo.*
-- **Avanzado (03)**: vulnerabilidades comunes (reentrancy, control de acceso, overflow, front-running), optimizacion de gas, layout de storage, assembly/Yul, `delegatecall`, proxies y contratos actualizables, ERC-4626, `CREATE2`, auditoria.
+- **Avanzado (03)**: vulnerabilidades comunes (reentrancy, control de acceso, overflow, front-running), optimizacion de gas, layout de storage, assembly/Yul, `delegatecall`, proxies y contratos actualizables, ERC-4626, ERC-1155, `CREATE2`, firmas EIP-712, manipulacion de oraculos con flash loans, auditoria. *Completo.*
 
 ### Camino Hardhat (04 a 06)
 
